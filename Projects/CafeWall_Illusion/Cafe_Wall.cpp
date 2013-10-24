@@ -1,5 +1,5 @@
 /**
-Author: Jason Fevrier
+Author: Jason
 This Project displays the cafe wall illusion by using rows of black squares and 
 a gray line between them.
 **/
