@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Reads input for a file and builds a binary tree,
  * then uses the tree to create a 2D char array and display
  * it to the console
- * @author Jason Fevrier
+ * @author Jason
  *
  */
 
