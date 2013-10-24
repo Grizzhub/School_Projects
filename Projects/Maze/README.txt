@@ -1,1 +1,3 @@
-Had specific specs to follow for reading in the maze, Had a choice of how to backtrack through the maze, I chose not to use a stack.
+Program reads in an input file of containing 0's and 1's in a 10x10 format seperated by a space. The top left of the 10x10 input will always be the Start of the maze and the bottom right will always be the End of the maze. After reading in the lines it builds the maze in a 2D array then solves the maze, placing 2's in the path which it used to reach the end.
+
+Ive provided an example of the Input file as well.
