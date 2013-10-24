@@ -2,8 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 /**
- * This program reads a maze into it then proceeds to solve it
- * putting a 2 in the slots used to solve the maze.
+ * This program reads a  10x10 of 0's and 1's maze into it 1,s being walls 
+ * then proceeds to solve it putting a 2 in the path it took to solve the maze to solve the maze.
+ * 
  * @author Jason Fevrier
  *
  */
@@ -12,7 +13,7 @@ public class Project3 {
 
     public static void main(String[] args) {
 
-        if (args.length == 0) System.out.println("No file specified.");
+        if (args.length == 0) System.out.println("No file specified."); // Reads File
         else {
             FileReader theFile;
             BufferedReader inFile;
@@ -20,15 +21,15 @@ public class Project3 {
                 theFile = new FileReader(args[0]);
                 inFile = new BufferedReader(theFile);
                 boolean endOfFile = false;
-                while(!endOfFile){
-                    boolean[][] visited = new boolean[10][10];
-                    int[][] maze = buildMaze(inFile);
+                while(!endOfFile){ // If not at the end
+                    boolean[][] visited = new boolean[10][10]; 
+                    int[][] maze = buildMaze(inFile); // Create a new 2D array using the buildMaze method
                     System.out.println("New Maze: ");
                     if(findPath(maze, 0 ,0, visited)){
                         System.out.println("Solved Maze:");
-                        printMaze(maze);
+                        printMaze(maze); // Display maze if its solvable
                     }else{
-                        System.out.println("No Solution for this Maze");
+                        System.out.println("No Solution for this Maze"); // Print if it is not solvable
                     }
                     if(inFile.readLine() == null){
                         endOfFile = true;
@@ -39,8 +40,10 @@ public class Project3 {
             catch (Exception e) { System.out.println(e); }
         }
     }
-
-    private static int[][] buildMaze(BufferedReader inputReader) throws IOException {
+    /**
+     * Reads in the maze and puts it into an array row by row
+     **/
+    private static int[][] buildMaze(BufferedReader inputReader) throws IOException { 
         int numRows = 10;
         int numCols = 10;
         int[][] maze = new int[numRows][numCols];
