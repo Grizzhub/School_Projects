@@ -4,7 +4,7 @@ import java.io.IOException;
 /**
  * This program reads a maze into it then proceeds to solve it
  * putting a 2 in the slots used to solve the maze.
- * @author Jason Fevrier
+ * @author Jason
  *
  */
 
