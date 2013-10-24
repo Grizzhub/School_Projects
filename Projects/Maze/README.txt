@@ -1,1 +1,1 @@
-Test
+Had specific specs to follow for reading in the maze, Had a choice of how to backtrack through the maze, I chose not to use a stack.

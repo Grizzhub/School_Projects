@@ -1,0 +1,1 @@
+Specifications were to read in numbers and display a traditional binary tree.
