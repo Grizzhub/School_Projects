@@ -14,10 +14,10 @@ void display(void){
 			//Creating the first black square position at the top left
 			glVertex2i(x, 300); 
 			x+=50;
-            		glVertex2i(x, 300); 
-            		glVertex2i(x, 250);
+            	glVertex2i(x, 300); 
+            	glVertex2i(x, 250);
 			x-=50;
-            		glVertex2i(x, 250);
+            	glVertex2i(x, 250);
 
 			x+=25; // Shifting the second black square that will go below it over by 25 in the x dimension
 			
