@@ -24,50 +24,50 @@ void display(void){
 			//Second black square that goes below the first
 			glVertex2i(x, 250);
 			x+=50;
-            	     glVertex2i(x, 250);
-            		glVertex2i(x, 200);
+            	    glVertex2i(x, 250);
+            	    glVertex2i(x, 200);
 			x-=50;
-            		glVertex2i(x, 200);
+            	    glVertex2i(x, 200);
 
 			x+=25; // Shifting the third black square over slightly to go below the second
 
 			//Third black square that goes below the second
 			glVertex2i(x, 200);
 			x+=50;
-            		glVertex2i(x, 200);
-            		glVertex2i(x, 150);
+            	    glVertex2i(x, 200);
+            	    glVertex2i(x, 150);
 			x-=50;
-            		glVertex2i(x, 150);
+            	    glVertex2i(x, 150);
 
 			x-=25; //Shifting the fourth square backwards to to alternate
 
 			//Fourth black square
 			glVertex2i(x, 150);
 			x+=50;
-            		glVertex2i(x, 150);
-            		glVertex2i(x, 100);
+            	    glVertex2i(x, 150);
+            	    glVertex2i(x, 100);
 			x-=50;
-            		glVertex2i(x, 100);
+            	    glVertex2i(x, 100);
 
 			x-=25; // Shift backwards
 
 			//Fifth square
 			glVertex2i(x, 100);
 			x+=50;
-            		glVertex2i(x, 100);
-            		glVertex2i(x, 50);
+            	    glVertex2i(x, 100);
+            	    glVertex2i(x, 50);
 			x-=50;
-            		glVertex2i(x, 50);
+            	    glVertex2i(x, 50);
 
 			x+=25; // Shift forwards again
 
 			// Last square
 			glVertex2i(x, 50);
 			x+=50;
-            		glVertex2i(x, 50);
-            		glVertex2i(x, 0);
+            	    glVertex2i(x, 50);
+            	    glVertex2i(x, 0);
 			x-=50;
-            		glVertex2i(x, 0);
+            	    glVertex2i(x, 0);
 
 			glEnd(); // end quads
 		}
