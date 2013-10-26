@@ -31,8 +31,7 @@ void drawByItteration(int x1, int x2, int y, bool isOddItteration) {
     }
 }
     
-  void drawBlocks() {
-	  
+  void drawSquares() {
         for (int x = 0; x <= 400; x+=100) {
               draw(x);
          }	
@@ -43,7 +42,7 @@ void display(void){
 	 glColor3f(0.0, 0.0, 0.0); // black
 	 glBegin(GL_QUADS);
 
-	 drawBlocks();
+	 drawSquares(); // draw squares call
 
 	 glEnd();	
 	
