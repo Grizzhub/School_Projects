@@ -5,72 +5,47 @@ a gray line between them.
 **/
 #include<gl/glut.h>
 
+void drawByItteration(int x1, int x2, int y, bool isOddItteration) {
+    if (isOddItteration) {
+        glVertex2i(x1, y);
+        glVertex2i(x2, y);
+    } else {
+        glVertex2i(x2, y);
+        glVertex2i(x1, y);
+    }
+}
+  void draw(int x) {
+    bool isOddItteration = true;
+    for (int y = 0; y <= 250; y+=50) {
+        drawByItteration(x + 25, x + 75, y, isOddItteration);
+        isOddItteration = !isOddItteration;
+    }
+    isOddItteration = true;
+    for (int y = 50; y <= 300; y+=50) {
+        if (y == 150 || y == 200) {
+            drawByItteration(x + 50, x + 100, y, isOddItteration);
+        } else {
+            drawByItteration(x, x + 50, y, isOddItteration);
+        }
+        isOddItteration = !isOddItteration;
+    }
+}
+    
+  void drawBlocks() {
+	  
+        for (int x = 0; x <= 400; x+=100) {
+              draw(x);
+         }	
+    }
+
 void display(void){
 	glClear(GL_COLOR_BUFFER_BIT);
 	 glColor3f(0.0, 0.0, 0.0); // black
+	 glBegin(GL_QUADS);
 
-		for(int x = 0;x<=500;x += 75){ // I chose this for loop because I wanted to shift the x by 75 each iteration
-			glBegin(GL_QUADS);
-			//Creating the first black square position at the top left
-			glVertex2i(x, 300); 
-			x+=50;
-            	    glVertex2i(x, 300); 
-            	    glVertex2i(x, 250);
-			x-=50;
-            	    glVertex2i(x, 250);
+	 drawBlocks();
 
-			x+=25; // Shifting the second black square that will go below it over by 25 in the x dimension
-			
-			//Second black square that goes below the first
-			glVertex2i(x, 250);
-			x+=50;
-            	    glVertex2i(x, 250);
-            	    glVertex2i(x, 200);
-			x-=50;
-            	    glVertex2i(x, 200);
-
-			x+=25; // Shifting the third black square over slightly to go below the second
-
-			//Third black square that goes below the second
-			glVertex2i(x, 200);
-			x+=50;
-            	    glVertex2i(x, 200);
-            	    glVertex2i(x, 150);
-			x-=50;
-            	    glVertex2i(x, 150);
-
-			x-=25; //Shifting the fourth square backwards to to alternate
-
-			//Fourth black square
-			glVertex2i(x, 150);
-			x+=50;
-            	    glVertex2i(x, 150);
-            	    glVertex2i(x, 100);
-			x-=50;
-            	    glVertex2i(x, 100);
-
-			x-=25; // Shift backwards
-
-			//Fifth square
-			glVertex2i(x, 100);
-			x+=50;
-            	    glVertex2i(x, 100);
-            	    glVertex2i(x, 50);
-			x-=50;
-            	    glVertex2i(x, 50);
-
-			x+=25; // Shift forwards again
-
-			// Last square
-			glVertex2i(x, 50);
-			x+=50;
-            	    glVertex2i(x, 50);
-            	    glVertex2i(x, 0);
-			x-=50;
-            	    glVertex2i(x, 0);
-
-			glEnd(); // end quads
-		}
+	 glEnd();	
 	
 	glBegin(GL_LINES); //declare lines
 	glColor3f(0.5, 0.5, 0.5); // gray
